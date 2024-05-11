@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class Activity 3</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="wts.css">
+  <link rel="icon" type="image/x-icon" href="Logo.png">
+</head>
+<body>
+  <audio id="cheers">
+    <source src="cheers.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="points" src="Points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+  <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+    <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+    <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+</div>
+<br>
+<br>
+  <center>
+  <h1 id="heading">Convention</h1>
+
+  
+
+
+  <div class="container">
+
+    <button onclick="abc(1)"  class="smallbtn">Q1</button>
+    <button onclick="abc(2)" class="smallbtn">Q2</button>
+    <button onclick="abc(3)"  class="smallbtn">Q3</button>
+    <button onclick="abc(4)"  class="smallbtn">Q4</button>
+    <button onclick="abc(5)" class="smallbtn">Q5</button>
+    <button onclick="abc(6)" class="smallbtn">Q6</button>
+    <button onclick="abc(7)" class="smallbtn">Q7</button>
+    <button onclick="abc(8)" class="smallbtn">Q8</button>
+    <button onclick="abc(9)" class="smallbtn">Q9</button> 
+    <button onclick="abc(10)" class="smallbtn">Q10</button>
+    <button onclick="abc(11)" class="smallbtn">Q11</button>
+    <button onclick="abc(12)" class="smallbtn">Q12</button>
+    <button onclick="abc(13)" class="smallbtn">Q13</button>
+    <button onclick="abc(14)" class="smallbtn">Q14</button>
+    <button onclick="abc(15)" class="smallbtn">Q15</button>
+    <button onclick="abc(16)" class="smallbtn">Q16</button>
+    <button onclick="abc(17)" class="smallbtn">Q17</button>
+    <button onclick="abc(18)" class="smallbtn">Q18</button>
+    <button onclick="abc(19)" class="smallbtn">Q19</button> 
+    <button onclick="abc(20)" class="smallbtn">Q20</button>
+    
+   
+                   
+  </div>
+
+  <div class="maindiv container">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="font-size:25px; color:black; font-family:Georgia;">
+      <p id="numdiv"></p>
+      </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgdiv">
+      <img id ="math_ques" src="" width="100%">
+    </div>
+  <div id="questiondiv" class="col-lg-7 col-md-7 col-sm-7 col-xs-8">
+    <div id="question"></div>
+    <br>
+  <div class="menu"><br><ul id="options"></ul></div>
+  <button id="nextbtn" class="btn btn-primary" onclick="newques()" style="display:none">Next</button>
+  <button id="subbtn" class="btn btn-success" onclick="checkAnswer()">Submit Answer</button>
+  <p id="result"></p>
+  </div>
+</div>
+  <script>
+    // Define an array of questions and their options 
+    var questions = [
+    
+    {
+      questionNo: "Q1.",
+      question: "Which of the following letters is a vowel?",
+      options: ["B","D","U","J"],
+      answer: "U"
+    },
+
+    {
+      questionNo: "Q2.",
+      question: "Which of the following letters is a consonant?",
+      options: ["A","C","O","E"],
+                
+      answer: "C"
+    },
+
+    {
+      questionNo: "Q3.",
+      question: "Which word rhymes with ‘Tall’?",
+      options: ["Jump","Tap","Fall","Dance"],
+      answer: "Fall"
+    },
+
+    
+    {
+      questionNo: "Q4.",
+      question: "Pick out the singular word from the following:",
+      options: ["Boy","Girls","Trucks","Trains"],
+      answer: "Boy"
+    },
+
+    {
+      questionNo: "Q5.",
+      question: "Identify the plural word:",
+      options: ["Boat", "School","Door","Ships"],
+      answer: "Ships"
+    },
+
+
+
+    {
+      questionNo: "Q6.",
+      question: "Naming words are called:",
+      options: ["Verbs","Pronouns","Nouns","Adverb"],
+      answer: "Nouns"
+    },
+
+   
+
+      {
+        questionNo: "Q7.",
+        question: "Which among the following is not a noun?",
+        options: ["Chair", "Table","Teacher","Beautiful"],
+        answer: "Beautiful"
+      },
+
+      {
+        questionNo: "Q8.",
+        question: "We will associate the word ‘She’ with:",
+        options: ["Husband", "Father","Mother","Brother"],
+        answer: "Mother"
+      },
+
+      {
+        questionNo: "Q9.",
+        question: "What is the opposite word for ‘Clean’?",
+        options: ["Beautiful","Dirty","Nice","Small"],
+        answer: "Dirty"    
+      },
+
+      {
+        questionNo: "Q10.",
+        question: "Fill in the blank with the suitable pronoun: <br> John, Austin and Sophie are playing. ________ are playing hide and seek.",
+        options: ["I" , "We","They","She"],
+        answer: "They"
+      },
+
+      
+      {
+        questionNo: "Q11.",
+        question: " Fill in the blank with the suitable pronoun: <br>Austin and I are best friends. ________ live in the same neighbourhood.",
+        options: ["He", "They","It","We"],
+
+        answer: "We"
+      },
+
+      {
+        questionNo: "Q12.",
+        question: "Choose the correct pair of a noun and a pronoun together:",
+        options: ["Boy– It","Parents – They","Happy – it","Girl – he"],
+        answer: "Parents – They"
+      },
+      {
+        questionNo: "Q13.",
+        question: "Article ‘An’ is used before the words starting with a consonant.",
+        options: ["True","False"],
+        answer: "False"
+      },
+
+      {
+        questionNo: "Q14.",
+        question: "‘The’ is used before a specific thing, person or name of mountains, rivers or seas.",
+        options: ["True","False"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q15.",
+        question: "Which of the following words will fall under the “Masculine gender”? ",
+        options: ["King", "Lion","Father","All of the above"],
+        answer: "All of the above"
+      },
+
+      {
+        questionNo: "Q16.",
+        question: "Identify the subject in this sentence:<br>Apple is my favourite fruit.",
+        options: ["Fruit", "My","Favourite","Apple"],
+        answer: "Apple"
+      },
+
+      {
+        questionNo: "Q17.",
+        question: " Complete the following sentence with the appropriate predicate:<br>Some birds ___________________.",
+        options: ["are grazing around the field.",
+                  "are flying over the trees.",
+                  "has four cows.",
+                  "are shining in the sky."],
+        answer: "are flying over the trees."
+      },
+
+      {
+        questionNo: "Q18.",
+        question: "The names of things that we cannot see or touch are known as abstract nouns.",
+        options: ["True", "False"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q19.",
+        question: "A gang of robbers” is a ________",
+        options: ["Collective noun", "Abstract noun","Proper noun","Common noun"],
+        answer: "Collective noun"
+      },
+
+      {
+        questionNo: "Q20.",
+        question: "Identify this punctuation mark (!):", 
+        options: ["Question mark", "Full stop","Comma","Exclamation mark"],
+        answer: "Exclamation mark"
+      },
+
+      
+      // Add more questions here
+    ];
+
+    //define the array of images
+
+    var img= ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg", "26.jpg"]
+    
+    // Get a random question from the array
+
+    var randomQuestion = questions[0];
+    var updatedimage = img[0]
+    document.getElementById("math_ques").src = updatedimage
+    document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+
+
+// Create a function here like family array project of Byjus to display next question \
+    // from array everytime instead of random question
+    
+    score=0
+    var i=1;
+    var count=questions.length
+    function newques(){
+      if(i==count){
+        document.getElementById("numdiv").innerHTML = " "
+        document.getElementById("heading").innerHTML = "Thank You...."
+        document.getElementById("math_ques").src = "last.jpg"
+        document.getElementById("question").innerHTML="Score:"+score;
+        document.getElementById("cheers").play()
+        // document.getElementById("result").innerHTML ="Click on the next button on the top right corner to practice more"
+        document.getElementById("nextbtn").style.display="none";
+
+              
+      if(score<=6){
+
+      document.getElementById("options").innerHTML="<div class='progress'> <div class='progress-bar' role='progressbar' aria-valuenow='30' aria-valuemin='0' aria-valuemax='100' value='30' style='width:30%;background-color:red;'>  </div></div>"
+      document.getElementById("result").innerHTML="I Appreciate Your Attempt 😀"
+
+      }
+
+      if(score>6 && score<=15){
+
+      document.getElementById("options").innerHTML="<div class='progress'> <div class='progress-bar' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width:60%;background-color:blue;'>  <span class='sr-only'>70% Complete</span></div></div>"
+      document.getElementById("result").innerHTML="Well Done You're Smart 👍"
+
+
+}
+
+      if(score>15){
+
+    document.getElementById("options").innerHTML="<div class='progress'> <div class='progress-bar' role='progressbar' aria-valuenow='90' aria-valuemin='0' aria-valuemax='100' style='width:100%;background-color:green;'>  <span class='sr-only'>70% Complete</span></div></div>"
+    document.getElementById("result").innerHTML="Im Impressed <br> You're Super Smart 😎"
+
+
+}
+
+      }
+      else{
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+      document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+  }
+ 
+  
+    
+    // Check the selected answer against the correct answer
+    function checkAnswer() {
+      var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+      if (selectedAnswer === randomQuestion.answer) {
+        score++;
+       
+      } 
+      document.getElementById("result").innerHTML = "Click Next! &#128512" ;
+        document.getElementById("points").play();
+        document.getElementById("subbtn").style.display="none"
+        document.getElementById("nextbtn").style.display="inline-block"
+    }
+
+   
+    function abc(x){
+      i=x-1
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+      document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+
+    
+  </script>
+
+</center>
+</body>
+</html>
